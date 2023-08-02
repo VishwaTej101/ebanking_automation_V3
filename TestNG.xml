@@ -7,12 +7,12 @@
 			
 			<!--eBanking Test Cases -->
 			<!--<class name="com.inetbanking.testCases.TC_LoginTest_001" /> -->
-			<class name="com.inetbanking.testCases.TC_AddCustomer_003" />
+			<!--<class name="com.inetbanking.testCases.TC_AddCustomer_003" /> -->
 			<!--<class name="com.inetbanking.testCases.TC_LoginDDT_002" /> -->
 			
 			
 			<!--Insurance Site Test Cases-->
-			<class name="com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001.java"/>
+			<class name="com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001"/>
 		</classes>
 	</test>
 </suite>

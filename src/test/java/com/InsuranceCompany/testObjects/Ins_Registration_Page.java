@@ -10,24 +10,7 @@ public class Ins_Registration_Page {
 
 	
 	WebDriver ldriver;
-	//
-	//
-//		public LoginPage(WebDriver rdriver) {
-//			ldriver = rdriver;
-//			PageFactory.initElements(rdriver, this);
-	//
-//		}
-	//	
-////		Xpath of all the webElements
-	//
-//		@FindBy(xpath = "//input[@name='uid']")
-//		WebElement txtUserName;
-	//
-//		@FindBy(xpath = "//input[@name='password']")
-//		WebElement txtPassword;
-	//
-//		@FindBy(xpath = "//input[@name='btnLogin']")
-//		WebElement btnLogin;
+	
 	//
 		@FindBy(xpath = "//a[normalize-space()='Log out']")
 		@CacheLookup
@@ -42,66 +25,91 @@ public class Ins_Registration_Page {
 
 		}
 
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//a[@class='btn btn-default']")
 		WebElement RegistrationBtn;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_firstname']")
 		WebElement txtFirstName;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_surname']")
 		WebElement txtSurName;
 
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_phone']")
 		WebElement txtPhone;
 
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_address_attributes_street']")
 		WebElement txtAddress;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_address_attributes_city']")
 		WebElement txtCity;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_address_attributes_county']")
 		WebElement txtCountry;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_address_attributes_postcode']")
 		WebElement txtPostCode;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_user_detail_attributes_email']")
 		WebElement txtEmail;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_user_detail_attributes_password']")
 		WebElement txtPassword;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@id='user_user_detail_attributes_password_confirmation']")
 		WebElement txtConfirmPassword;
 		
-		@FindBy(xpath = "")
+		@FindBy(xpath = "//input[@name='submit']")
 		WebElement CreateBtn;
 
 		public void clickRegister() {
 			RegistrationBtn.click();
 		}
 		
+		public void setFirstName(String FirstName) {
+			txtFirstName.sendKeys(FirstName);
+		}
+		
+		public void setSurName(String SurName) {
+			txtSurName.sendKeys(SurName);
+		}
+		
+		public void setPhone(String PhNum) {
+			txtPhone.sendKeys(PhNum);
+		}
+		
+		public void setAddress(String Address) {
+			txtAddress.sendKeys(Address);
+		}
+		
+		public void setCity(String City) {
+			txtCity.sendKeys(City);
+		}
+		
+		public void setCountry(String Country) {
+			txtCountry.sendKeys(Country);
+		}
+		
+		public void setPostCode(String PCode) {
+			txtPostCode.sendKeys(PCode);
+		}
+		
+		public void setEmail(String Email) {
+			txtEmail.sendKeys(Email);
+		}
 		
 
 		public void setPassword(String pwd) {
 			txtPassword.sendKeys(pwd);
 		}
+		
+		public void setConfPwd(String CPwd) {
+			txtConfirmPassword.sendKeys(CPwd);
+		}
 
-		public void clickSubmit() {
+		public void clickCreate() {
 			CreateBtn.click();
 		}
 
-		public void clickLogout() {
-			LnkLogout.click();
-		}
 
-//		public void setPassword(String pwd) {
-//			txtPassword.sendKeys(pwd);
-//		}
-
-//		public void clickSubmit() {
-//			btnLogin.click();
-//		}
 
 }

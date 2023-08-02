@@ -41,9 +41,9 @@ public class TC_AddCustomer_003 extends BaseClass {
 		addcust.custgender("male");
 
 		// Calendar
-		Thread.sleep(3000);
+		
 		addcust.custdob("10", "15", "1985");
-		Thread.sleep(3000);
+	
 		// gave it sleep for 6 seconds total
 
 		addcust.custaddress("INDIA");
@@ -60,7 +60,6 @@ public class TC_AddCustomer_003 extends BaseClass {
 		addcust.custpassword("Zxcvbnm@123");
 		addcust.custsubmit();
 
-		Thread.sleep(4000);
 //Assertion/validation once the customer has been registered properly
 
 		boolean res = driver.getPageSource().contains("Customer Registered Successsfully!!!");
