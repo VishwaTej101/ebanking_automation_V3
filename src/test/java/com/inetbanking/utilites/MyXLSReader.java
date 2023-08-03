@@ -67,37 +67,73 @@ public class MyXLSReader implements Closeable {
         }
     }
 
-    // returns the data from a cell
-    public String getCellData(String sheetname, int colName, int rowNum) {
-        try {
-            // ...
+ // returns the data from a cell
+ // ... (previous methods)
 
-            cell = row.getCell(colName);
-            if (cell == null)
-                return "";
+ // returns the data from a cell
+ public String getCellData(String sheetname, Object colIdentifier, int rowNum) {
+     try {
+         if (rowNum <= 0)
+             return "";
 
-            CellType cellType = cell.getCellType();
-            if (cellType == CellType.STRING) {
-                return cell.getStringCellValue();
-            } else if (cellType == CellType.NUMERIC || cellType == CellType.FORMULA) {
-                if (org.apache.poi.ss.usermodel.DateUtil.isCellDateFormatted(cell)) {
-                    Calendar cal = Calendar.getInstance();
-                    cal.setTime(cell.getDateCellValue());
-                    String cellText = (cal.get(Calendar.DAY_OF_MONTH)) + "/" + (cal.get(Calendar.MONTH) + 1) + "/"
-                            + (cal.get(Calendar.YEAR));
-                    return cellText;
-                } else {
-                    return String.valueOf(cell.getNumericCellValue());
-                }
-            } else if (cellType == CellType.BLANK)
-                return "";
-            else
-                return String.valueOf(cell.getBooleanCellValue());
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "row " + rowNum + " or column " + colName + " does not exist in xls";
-        }
-    }
+         int sheetIndex = workbook.getSheetIndex(sheetname);
+         if (sheetIndex == -1)
+             return "";
+
+         sheet = workbook.getSheetAt(sheetIndex);
+         row = sheet.getRow(0);
+         int colNum = -1;
+
+         if (colIdentifier instanceof String) {
+             // Search for column name by string comparison
+             String colName = (String) colIdentifier;
+             for (int i = 0; i < row.getLastCellNum(); i++) {
+                 if (row.getCell(i).getStringCellValue().equals(colName)) {
+                     colNum = i;
+                     break;
+                 }
+             }
+         } else if (colIdentifier instanceof Integer) {
+             // Use column number directly
+             colNum = (Integer) colIdentifier - 1; // Convert to 0-based index
+         }
+
+         if (colNum == -1)
+             return "";
+
+         sheet = workbook.getSheetAt(sheetIndex);
+         row = sheet.getRow(rowNum - 1);
+         if (row == null)
+             return "";
+
+         cell = row.getCell(colNum);
+         if (cell == null)
+             return "";
+
+         CellType cellType = cell.getCellType();
+         if (cellType == CellType.STRING) {
+             return cell.getStringCellValue();
+         } else if (cellType == CellType.NUMERIC || cellType == CellType.FORMULA) {
+             if (org.apache.poi.ss.usermodel.DateUtil.isCellDateFormatted(cell)) {
+                 Calendar cal = Calendar.getInstance();
+                 cal.setTime(cell.getDateCellValue());
+                 String cellText = (cal.get(Calendar.DAY_OF_MONTH)) + "/" + (cal.get(Calendar.MONTH) + 1) + "/"
+                         + (cal.get(Calendar.YEAR));
+                 return cellText;
+             } else {
+                 return String.valueOf(cell.getNumericCellValue());
+             }
+         } else if (cellType == CellType.BLANK)
+             return "";
+         else
+             return String.valueOf(cell.getBooleanCellValue());
+     } catch (Exception e) {
+         e.printStackTrace();
+         return "row " + rowNum + " or column " + colIdentifier + " does not exist in xls";
+     }
+ }
+
+ // ... (other methods)
 
     // returns true if data is set successfully else false
     public boolean setCellData(String sheetName, String colName, int rowNum, String data) {

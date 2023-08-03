@@ -2,35 +2,46 @@ package com.inetbanking.testCases;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 
 import org.openqa.selenium.NoAlertPresentException;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.inetbanking.pageObjects.LoginPage;
+import com.inetbanking.utilites.DataUtil;
+import com.inetbanking.utilites.MyXLSReader;
 import com.inetbanking.utilites.XLUtiles;
 
 public class TC_LoginDDT_002 extends BaseClass {
 
+	MyXLSReader excelReader;
+
 	@Test(dataProvider = "dataSupplier")
-	public void loginDDT() throws InterruptedException {
-		LoginPage lp = new LoginPage(driver);
-		lp.setUserName(username);
-		lp.setPassword(password);
-
-		lp.clickSubmit();
-
-		if (isAlertPresent() == true) {
-			driver.switchTo().alert().accept();
-			driver.switchTo().defaultContent();
-			Assert.assertTrue(false);
-		} else {
-			Assert.assertTrue(true);
-			lp.clickLogout();
-			driver.switchTo().alert().accept();
-			driver.switchTo().defaultContent();
+	public void loginDDT(HashMap<String,String>hMap) {
+		
+		if(!DataUtil.isRunnable(excelReader,"LoginTest","TestCases")||hMap.get("Runmode").equals("N")) {
+			
+			throw new SkipException("Run mode is set to N, hence not executed");
 		}
+//		LoginPage lp = new LoginPage(driver);
+//		lp.setUserName(username);
+//		lp.setPassword(password);
+//
+//		lp.clickSubmit();
+//
+//		if (isAlertPresent() == true) {
+//			driver.switchTo().alert().accept();
+//			driver.switchTo().defaultContent();
+//			Assert.assertTrue(false);
+//		} else {
+//			Assert.assertTrue(true);
+//			lp.clickLogout();
+//			driver.switchTo().alert().accept();
+//			driver.switchTo().defaultContent();
+//		}
 
 	}
 
@@ -45,8 +56,16 @@ public class TC_LoginDDT_002 extends BaseClass {
 	}
 
 	@DataProvider
-	public void dataSupplier() {
+	public Object[][] dataSupplier() {
+		Object[][] data = null;
+		try {
+			excelReader = new MyXLSReader("src\\test\\resources\\All_TestData.xlsx");
+			data = DataUtil.getTestData(excelReader, "LoginTest", "Data");
 
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return data;
 	}
 
 //	@DataProvider(name = "LoginData")
