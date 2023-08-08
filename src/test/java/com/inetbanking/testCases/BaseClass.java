@@ -1,5 +1,6 @@
 package com.inetbanking.testCases;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
@@ -12,9 +13,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.inetbanking.utilites.ReadConfig;
 
 public class BaseClass {
+
+	protected static ExtentReports extentReports;
 
 	ReadConfig readconfig = new ReadConfig();
 
@@ -29,6 +34,14 @@ public class BaseClass {
 	@Parameters("browser")
 	@BeforeClass
 	public void setup(String br) {
+
+		// extent report code
+
+		extentReports = new ExtentReports();
+
+		File file = new File(System.getProperty("user.dir") + "\\test-output\\testReport.html");
+		ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
+		extentReports.attachReporter(extentSpark);
 
 		if (br.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
@@ -51,6 +64,9 @@ public class BaseClass {
 
 	@AfterClass
 	public void tearDown() {
+
+		extentReports.flush();
+
 		driver.quit();
 	}
 }

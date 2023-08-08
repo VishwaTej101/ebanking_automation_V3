@@ -12,6 +12,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.inetbanking.pageObjects.AddCustomer_Page;
 import com.inetbanking.pageObjects.LoginPage;
 
@@ -27,7 +29,7 @@ public class TC_AddCustomer_003 extends BaseClass {
 		lp.setPassword(password);
 		lp.clickSubmit();
 
-		
+		ExtentTest test2 = extentReports.createTest("Add Customer test - TC_AddCustomer_003");
 
 		// Calling and linking the Driver with AddCustomer_page object class so that we
 		// can use all the webelements
@@ -66,8 +68,10 @@ public class TC_AddCustomer_003 extends BaseClass {
 
 		if (res == true) {
 			Assert.assertTrue(true);
+			test2.log(Status.PASS,"Customer added successfully");
 		} else {
 			Assert.assertTrue(false);
+			test2.log(Status.FAIL,"Customer is not added");
 		}
 	}
 	
