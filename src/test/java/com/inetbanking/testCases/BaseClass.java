@@ -1,6 +1,5 @@
 package com.inetbanking.testCases;
 
-
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
@@ -38,7 +37,7 @@ public class BaseClass {
 			System.setProperty("webdriver.chrome.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
 			driver = new ChromeDriver();
 		}
-
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(baseURL);
 

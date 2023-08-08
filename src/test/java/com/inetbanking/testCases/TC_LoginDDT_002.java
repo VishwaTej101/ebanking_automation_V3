@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.testng.Assert;
 import org.testng.SkipException;
@@ -26,22 +27,40 @@ public class TC_LoginDDT_002 extends BaseClass {
 			
 			throw new SkipException("Run mode is set to N, hence not executed");
 		}
-//		LoginPage lp = new LoginPage(driver);
-//		lp.setUserName(username);
-//		lp.setPassword(password);
-//
-//		lp.clickSubmit();
-//
-//		if (isAlertPresent() == true) {
-//			driver.switchTo().alert().accept();
-//			driver.switchTo().defaultContent();
-//			Assert.assertTrue(false);
-//		} else {
-//			Assert.assertTrue(true);
-//			lp.clickLogout();
-//			driver.switchTo().alert().accept();
-//			driver.switchTo().defaultContent();
-//		}
+		LoginPage lp = new LoginPage(driver);
+		lp.setUserName(username);
+		lp.setPassword(password);
+		lp.clickSubmit();
+		
+		String expectedResult = hMap.get("ExpectedResult");
+		
+		boolean expectedConvertedResult = false;
+		
+		if(expectedResult.equalsIgnoreCase("Success")) {
+		
+			expectedConvertedResult = true;
+		}else if(expectedResult.equalsIgnoreCase("Failure")) {
+			expectedConvertedResult = false;
+		}
+		boolean actualResult = false;
+		try {
+			 actualResult = driver.findElement(By.linkText("Edit")).isDisplayed();
+		}catch(Throwable e) {
+			actualResult = false;
+		}
+		
+		Assert.assertEquals(actualResult, expectedConvertedResult);
+
+		if (isAlertPresent() == true) {
+			driver.switchTo().alert().accept();
+			driver.switchTo().defaultContent();
+			Assert.assertTrue(false);
+		} else {
+			Assert.assertTrue(true);
+			lp.clickLogout();
+			driver.switchTo().alert().accept();
+			driver.switchTo().defaultContent();
+		}
 
 	}
 
