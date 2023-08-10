@@ -20,7 +20,7 @@ import com.inetbanking.utilites.ReadConfig;
 
 public class Insurance_BaseClass {
 
-	protected static ExtentReports extentReports;
+//	protected static ExtentReports extentReports;
 
 	ReadConfig readconfig = new ReadConfig();
 	
@@ -40,11 +40,11 @@ public class Insurance_BaseClass {
 		
 		//extent report code
 
-		extentReports = new ExtentReports();
-
-		File file = new File(System.getProperty("user.dir") + "\\test-output\\testReport.html");
-		ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
-		extentReports.attachReporter(extentSpark);
+//		extentReports = new ExtentReports();
+//
+//		File file = new File(System.getProperty("user.dir") + "\\test-output\\testReport.html");
+//		ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
+//		extentReports.attachReporter(extentSpark);
 
 		if (br.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
@@ -68,7 +68,7 @@ public class Insurance_BaseClass {
 	@AfterClass
 	public void tearDown() {
 		
-		extentReports.flush();
+//		extentReports.flush();
 
 		driver.quit();
 	}

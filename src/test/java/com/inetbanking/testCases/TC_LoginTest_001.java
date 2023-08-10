@@ -1,12 +1,33 @@
 package com.inetbanking.testCases;
 
+import java.io.File;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.ExtentTest;
 import com.inetbanking.pageObjects.LoginPage;
 
 public class TC_LoginTest_001 extends BaseClass {
+	
+    ExtentReports extentReportsForThisTestCase;
+    ExtentTest test1; // Add this instance variable for the ExtentTest
+
+    @BeforeClass
+    public void setupForThisTestCase() {
+        extentReportsForThisTestCase = new ExtentReports();
+
+        File file = new File(System.getProperty("user.dir") + "\\test-output\\" + this.getClass().getSimpleName() + ".html");
+        ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
+        extentReportsForThisTestCase.attachReporter(extentSpark);
+        
+        test1 = extentReportsForThisTestCase.createTest("Login Test - TC_LoginTest"); // Create the ExtentTest
+    }
 
 	
 	//Calling the Login page object class first
@@ -18,22 +39,22 @@ public class TC_LoginTest_001 extends BaseClass {
 		lp.setPassword(password);
 		lp.clickSubmit();
 		
-	    ExtentTest test1 = extentReports.createTest("Login Test - TC_LoginTest_001");
 		
 		//Once Login is done Asserting/ or verifying if we have landed on HomePAGE WITH THE TITLE
 		if(driver.getTitle().equals("Guru99 Bank Manager HomePage")) {
 			Assert.assertTrue(true);
-//			Logger.info("Login test passed");
 			System.out.println("Print login passed");
 			test1.log(Status.PASS, "Login test Passed");
 		}else {
 			Assert.assertTrue(false);
-//			Logger.info("Login test failed");
 			System.out.println("print login failed");
 			test1.log(Status.FAIL, "Login test failed");
-
+		}
+	}
 	
+	@AfterClass
+	public void tearDownForThisTestCase() {
+	    extentReportsForThisTestCase.flush();
 	}
 
-}
 }

@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,11 +102,6 @@
                       <a href="#" panel-name="suite-InetBankingV1" class="show-methods failed suite-InetBankingV1"> (show)</a> <!-- show-methods failed suite-InetBankingV1 -->
                     </span>
                     <div class="method-list-content failed suite-InetBankingV1">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-InetBankingV1" title="com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001" class="method navigator-link" hash-for-method="RegPage">RegPage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-InetBankingV1" title="com.inetbanking.testCases.TC_AddCustomer_003" class="method navigator-link" hash-for-method="addNewCustomer">addNewCustomer</a> <!-- method navigator-link -->
@@ -121,11 +116,6 @@
                       <a href="#" panel-name="suite-InetBankingV1" class="show-methods passed suite-InetBankingV1"> (show)</a> <!-- show-methods passed suite-InetBankingV1 -->
                     </span>
                     <div class="method-list-content passed suite-InetBankingV1">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-InetBankingV1" title="com.InsuranceCompany.testCases.TC_Insurance_Login_Page_001" class="method navigator-link" hash-for-method="Ins_LoginTest">Ins_LoginTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-InetBankingV1" title="com.inetbanking.testCases.TC_LoginTest_001" class="method navigator-link" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
@@ -154,62 +144,36 @@
                   <a name="addNewCustomer">
                   </a> <!-- addNewCustomer -->
                   <span class="method-name">addNewCustomer</span>
-                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: Dismissed user prompt dialog: please fill all fields: 
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //input[@name=&apos;name&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;VISHWATEJA&apos;, ip: &apos;192.168.243.17&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 115.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230726201356, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 40112, moz:profile: C:\Users\ASUS\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0e1e6c2c-1ae5-46f6-9175-383c93c7139b
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 116.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230805021307, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 41576, moz:profile: C:\Users\ASUS\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b6e7f4b3-b578-4725-8ac9-f0745520462a
+*** Element info: {Using=xpath, value=//input[@name=&apos;name&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.getPageSource(RemoteWebDriver.java:438)
-	at com.inetbanking.testCases.TC_AddCustomer_003.addNewCustomer(TC_AddCustomer_003.java:67)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.sendKeys(Unknown Source)
+	at com.inetbanking.pageObjects.AddCustomer_Page.custName(AddCustomer_Page.java:82)
+	at com.inetbanking.testCases.TC_AddCustomer_003.addNewCustomer(TC_AddCustomer_003.java:58)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
+... Removed 32 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-InetBankingV1-class-failed -->
-          <div class="suite-InetBankingV1-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="RegPage">
-                  </a> <!-- RegPage -->
-                  <span class="method-name">RegPage</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001.RegPage(TC_Insurance_Registration_page_001.java:45)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-InetBankingV1-class-failed -->
-          <div class="suite-InetBankingV1-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.InsuranceCompany.testCases.TC_Insurance_Login_Page_001</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="Ins_LoginTest">
-                  </a> <!-- Ins_LoginTest -->
-                  <span class="method-name">Ins_LoginTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-InetBankingV1-class-passed -->
           <div class="suite-InetBankingV1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -240,8 +204,6 @@ Session ID: 0e1e6c2c-1ae5-46f6-9175-383c93c7139b
     &lt;classes&gt;
       &lt;class name=&quot;com.inetbanking.testCases.TC_LoginTest_001&quot;/&gt;
       &lt;class name=&quot;com.inetbanking.testCases.TC_AddCustomer_003&quot;/&gt;
-      &lt;class name=&quot;com.InsuranceCompany.testCases.TC_Insurance_Login_Page_001&quot;/&gt;
-      &lt;class name=&quot;com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- BankingApp Test --&gt;
 &lt;/suite&gt; &lt;!-- InetBankingV1 --&gt;
@@ -255,7 +217,7 @@ Session ID: 0e1e6c2c-1ae5-46f6-9175-383c93c7139b
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">BankingApp Test (4 classes)</span>
+                <span class="test-name">BankingApp Test (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -281,28 +243,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'addNewCustomer')
 data.setCell(0, 2, 'com.inetbanking.testCases.TC_AddCustomer_003')
-data.setCell(0, 3, 3784);
+data.setCell(0, 3, 15003);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'RegPage')
-data.setCell(1, 2, 'com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001')
-data.setCell(1, 3, 3194);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'Ins_LoginTest')
-data.setCell(2, 2, 'com.InsuranceCompany.testCases.TC_Insurance_Login_Page_001')
-data.setCell(2, 3, 2892);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'loginTest')
-data.setCell(3, 2, 'com.inetbanking.testCases.TC_LoginTest_001')
-data.setCell(3, 3, 2497);
+data.setCell(1, 1, 'loginTest')
+data.setCell(1, 2, 'com.inetbanking.testCases.TC_LoginTest_001')
+data.setCell(1, 3, 2469);
 window.suiteTableData['InetBankingV1']= { tableData: data, tableDiv: 'times-div-InetBankingV1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 seconds</span>
+              <span class="suite-total-time">Total running time: 17 seconds</span>
               <div id="times-div-InetBankingV1">
               </div> <!-- times-div-InetBankingV1 -->
             </div> <!-- times-div -->
@@ -333,66 +287,46 @@ return data;
                 <span class="method-name">setup(firefox)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">setupForThisTestCase</span>
+                <span class="method-start">11354 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">8816 ms</span>
+                <span class="method-start">11582 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
+                <span class="method-name">tearDownForThisTestCase</span>
+                <span class="method-start">14063 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">11321 ms</span>
+                <span class="method-start">14450 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.inetbanking.testCases.TC_AddCustomer_003</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup(firefox)</span>
-                <span class="method-start">12383 ms</span>
+                <span class="method-start">15865 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setupForThisTestCase</span>
+                <span class="method-start">26734 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">addNewCustomer</span>
-                <span class="method-start">20128 ms</span>
+                <span class="method-start">26735 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">Screenshot([TestResult name=addNewCustomer status=FAILURE method=TC_AddCustomer_003.addNewCustomer()[pri:0, ins...)</span>
-                <span class="method-start">23915 ms</span>
+                <span class="method-start">41742 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">23981 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.InsuranceCompany.testCases.TC_Insurance_Login_Page_001</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setup(firefox)</span>
-                <span class="method-start">24847 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">Ins_LoginTest</span>
-                <span class="method-start">31682 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">34576 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setup(firefox)</span>
-                <span class="method-start">35448 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">RegPage</span>
-                <span class="method-start">43064 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">46260 ms</span>
+                <span class="method-start">42053 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

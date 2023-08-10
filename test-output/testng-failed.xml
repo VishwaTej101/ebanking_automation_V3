@@ -9,16 +9,10 @@
           <include name="setup"/>
           <include name="tearDown"/>
           <include name="addNewCustomer"/>
+          <include name="setupForThisTestCase"/>
           <include name="Screenshot"/>
         </methods>
       </class> <!-- com.inetbanking.testCases.TC_AddCustomer_003 -->
-      <class name="com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="RegPage"/>
-        </methods>
-      </class> <!-- com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001 -->
     </classes>
   </test> <!-- BankingApp Test(failed) -->
 </suite> <!-- Failed suite [InetBankingV1] -->
