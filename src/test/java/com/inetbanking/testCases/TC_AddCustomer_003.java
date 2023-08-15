@@ -24,20 +24,20 @@ public class TC_AddCustomer_003 extends BaseClass {
 	
 	ExtentReports extentReportsForThisTestCase;
 
-    private ExtentTest test2; // Declare the extent test variable
+    private ExtentTest test2= extentReports.createTest("Banking_Add_Customer_TC"); // Declare the extent test variable
 
-    @BeforeMethod
-    public void setupForThisTestCase() {
-    	
-    	 extentReportsForThisTestCase = new ExtentReports();
-
-         File file = new File(System.getProperty("user.dir") + "\\test-output\\" + this.getClass().getSimpleName() + ".html");
-         ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
-         extentReportsForThisTestCase.attachReporter(extentSpark);
-         
-        // Create extent test for this test case
-        test2 = extentReportsForThisTestCase.createTest("Add Customer test - TC_AddCustomer");
-    }
+//    @BeforeMethod
+//    public void setupForThisTestCase() {
+//    	
+//    	 extentReportsForThisTestCase = new ExtentReports();
+//
+//         File file = new File(System.getProperty("user.dir") + "\\test-output\\" + this.getClass().getSimpleName() + ".html");
+//         ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
+//         extentReportsForThisTestCase.attachReporter(extentSpark);
+//         
+//        // Create extent test for this test case
+//        test2 = extentReportsForThisTestCase.createTest("Add Customer test - TC_AddCustomer");
+//    }
 
     // Calling LogIn page object class first step
     @Test
@@ -86,16 +86,16 @@ public class TC_AddCustomer_003 extends BaseClass {
         }
     }
 
-    @AfterMethod
-    public void Screenshot(ITestResult result) throws IOException {
-    	
-    	extentReportsForThisTestCase.flush();
-    	
-        if (ITestResult.FAILURE == result.getStatus()) {
-            File screenshotfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(screenshotfile, new File("C:\\Users\\ASUS\\Desktop\\eclipse-workspace\\inetBanking_v1.zip_expanded\\inetBanking_v1\\Screenshots\\TC_Add_Cust_003_Fail.png"));
-        }
-    }
+//    @AfterMethod
+//    public void Screenshot(ITestResult result) throws IOException {
+//    	
+//    	extentReportsForThisTestCase.flush();
+//    	
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//            File screenshotfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//            FileUtils.copyFile(screenshotfile, new File("C:\\Users\\ASUS\\Desktop\\eclipse-workspace\\inetBanking_v1.zip_expanded\\inetBanking_v1\\Screenshots\\TC_Add_Cust_003_Fail.png"));
+//        }
+//    }
 
     // The email section cannot take the same email twice, so I have called a predefined section where the random alphabetic value
     // is called whenever the function is called

@@ -15,19 +15,17 @@ import com.inetbanking.pageObjects.LoginPage;
 
 public class TC_LoginTest_001 extends BaseClass {
 	
-    ExtentReports extentReportsForThisTestCase;
-    ExtentTest test1; // Add this instance variable for the ExtentTest
 
-    @BeforeClass
-    public void setupForThisTestCase() {
-        extentReportsForThisTestCase = new ExtentReports();
-
-        File file = new File(System.getProperty("user.dir") + "\\test-output\\" + this.getClass().getSimpleName() + ".html");
-        ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
-        extentReportsForThisTestCase.attachReporter(extentSpark);
-        
-        test1 = extentReportsForThisTestCase.createTest("Login Test - TC_LoginTest"); // Create the ExtentTest
-    }
+//    @BeforeClass
+//    public void setupForThisTestCase() {
+//        extentReportsForThisTestCase = new ExtentReports();
+//
+//        File file = new File(System.getProperty("user.dir") + "\\test-output\\" + this.getClass().getSimpleName() + ".html");
+//        ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
+//        extentReportsForThisTestCase.attachReporter(extentSpark);
+//        
+//        test1 = extentReportsForThisTestCase.createTest("Login Test - TC_LoginTest"); // Create the ExtentTest
+//    }
 
 	
 	//Calling the Login page object class first
@@ -39,6 +37,9 @@ public class TC_LoginTest_001 extends BaseClass {
 		lp.setPassword(password);
 		lp.clickSubmit();
 		
+//	    ExtentReports extentReportsForThisTestCase;
+	    ExtentTest test1=extentReports.createTest("Banking_Login_Page_TC");; // Add this instance variable for the ExtentTest
+
 		
 		//Once Login is done Asserting/ or verifying if we have landed on HomePAGE WITH THE TITLE
 		if(driver.getTitle().equals("Guru99 Bank Manager HomePage")) {
@@ -52,9 +53,9 @@ public class TC_LoginTest_001 extends BaseClass {
 		}
 	}
 	
-	@AfterClass
-	public void tearDownForThisTestCase() {
-	    extentReportsForThisTestCase.flush();
-	}
+//	@AfterClass
+//	public void tearDownForThisTestCase() {
+//	    extentReportsForThisTestCase.flush();
+//	}
 
 }

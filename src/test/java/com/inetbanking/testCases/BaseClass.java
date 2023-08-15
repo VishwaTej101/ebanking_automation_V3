@@ -16,46 +16,63 @@ import com.inetbanking.utilites.ReadConfig;
 
 public class BaseClass {
 
-//    protected static ExtentReports extentReports;
+	protected static ExtentReports extentReports;
 
-    ReadConfig readconfig = new ReadConfig();
+	ReadConfig readconfig = new ReadConfig();
 
-    public String baseURL = "https://demo.guru99.com/v3/index.php";// readconfig.getURL();
-    public String username = "mngr516186";// readconfig.getusername();
-    public String password = "requduh"; // readconfig.getpassword()
-    public static WebDriver driver;
+	// Defining the base URL based on the domain
+	public String baseURL = "";
+	public static WebDriver driver;
 
-    @Parameters("browser")
-    @BeforeClass
-    public void setup(String br) {
+	// banking domain creds
+	public String username = "mngr516186";// readconfig.getusername();
+	public String password = "requduh"; // readconfig.getpassword()
 
-        // Set up extent report for this test class
-//        extentReports = new ExtentReports();
-//
-//        File file = new File(System.getProperty("user.dir") + "\\test-output\\" + this.getClass().getSimpleName() + ".html");
-//        ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
-//        extentReports.attachReporter(extentSpark);
+	// insurance domain creds
+	public String Ins_username = "data@test.com";// readconfig.getusername();
+	public String Ins_password = "password"; // readconfig.getpassword()
 
-        // Initialize WebDriver based on browser parameter
-        if (br.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
-            driver = new FirefoxDriver();
-        } else if (br.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
-            driver = new ChromeDriver();
-        }
+	@Parameters({ "browser", "domain" })
+	@BeforeClass
+	public void setup(String br, String domain) {
 
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(baseURL);
-    }
+		// Set up extent report for this test class
+		extentReports = new ExtentReports();
 
-    @AfterClass
-    public void tearDown() {
-        // Flush the extent report for this test class
-//        extentReports.flush();
+		File file = new File(
+				System.getProperty("user.dir") + "\\test-output\\" + this.getClass().getSimpleName() + ".html");
+		ExtentSparkReporter extentSpark = new ExtentSparkReporter(file);
+		extentReports.attachReporter(extentSpark);
 
-        // Quit the WebDriver
-        driver.quit();
-    }
+		// Set base URL based on domain
+		if (domain.equalsIgnoreCase("banking")) {
+			baseURL = "https://demo.guru99.com/v3/index.php";
+		} else if (domain.equalsIgnoreCase("insurance")) {
+			baseURL = "https://demo.guru99.com/insurance/v1/index.php";
+		} else {
+			throw new IllegalArgumentException("Invalid environment provided");
+		}
+
+		// Initialize WebDriver based on browser parameter
+		if (br.equals("firefox")) {
+			System.setProperty("webdriver.gecko.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		} else if (br.equals("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
+			driver = new ChromeDriver();
+		}
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get(baseURL);
+	}
+
+	@AfterClass
+	public void tearDown() {
+		// Flush the extent report for this test class
+		extentReports.flush();
+
+		// Quit the WebDriver
+		driver.quit();
+	}
 }
