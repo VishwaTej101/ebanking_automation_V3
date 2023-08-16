@@ -33,10 +33,8 @@ public class TC_LoginTest_001 extends BaseClass {
 	public void loginTest() {
 		driver.manage().window().maximize();
 		LoginPage lp = new LoginPage(driver);
-		lp.setUserName(username);
-		lp.setPassword(password);
-		lp.clickSubmit();
-		
+		lp.setUserName(banking_username);
+		lp.setPassword(banking_password);
 //	    ExtentReports extentReportsForThisTestCase;
 	    ExtentTest test1=extentReports.createTest("Banking_Login_Page_TC");; // Add this instance variable for the ExtentTest
 

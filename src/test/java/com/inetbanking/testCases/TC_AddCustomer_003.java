@@ -44,8 +44,8 @@ public class TC_AddCustomer_003 extends BaseClass {
     public void addNewCustomer() throws InterruptedException {
         driver.manage().window().maximize();
         LoginPage lp = new LoginPage(driver);
-        lp.setUserName(username);
-        lp.setPassword(password);
+        lp.setUserName(banking_username);
+        lp.setPassword(banking_password);
         lp.clickSubmit();
 
         // Calling and linking the Driver with AddCustomer_page object class so that we

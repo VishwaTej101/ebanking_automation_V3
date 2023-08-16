@@ -28,8 +28,8 @@ public class TC_LoginDDT_002 extends BaseClass {
 			throw new SkipException("Run mode is set to N, hence not executed");
 		}
 		LoginPage lp = new LoginPage(driver);
-		lp.setUserName(username);
-		lp.setPassword(password);
+		lp.setUserName(banking_username);
+		lp.setPassword(banking_password);
 		lp.clickSubmit();
 		
 		String expectedResult = hMap.get("ExpectedResult");

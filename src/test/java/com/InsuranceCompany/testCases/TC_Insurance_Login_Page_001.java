@@ -33,8 +33,8 @@ public class TC_Insurance_Login_Page_001 extends BaseClass {
 	@Test
 	public void Ins_LoginTest() {
 		Ins_Login_page lp = new Ins_Login_page(driver);
-		lp.setUserName("data@test.com");
-		lp.setPassword("password");
+		lp.setUserName(Ins_username);
+		lp.setPassword(Ins_password);
 		lp.clickSubmit();
 		
 		ExtentTest test3 = extentReports.createTest("Insurance_Login_Page_TC");; // Add this instance variable for the ExtentTest

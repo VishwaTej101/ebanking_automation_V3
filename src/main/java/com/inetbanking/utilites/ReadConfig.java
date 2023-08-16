@@ -21,35 +21,42 @@ public class ReadConfig {
 		}
 	}
 	
+	///Banking domain readConfig functions
+	
 	public String getBankingApplicationURL() {
-		String url = prop.getProperty("bankingURL");
-		return url;
+		String Bankurl = prop.getProperty("bankingURL");
+		return Bankurl;
 	}
 	
-	public String getInsuranceApplicationURL() {
-		String url = prop.getProperty("insuranceURL");
-		return url;
-	}
+	
 	public String getBanking_Username() {
-		String username = prop.getProperty("bankingUserName");
-		return username;
+		String Bankusername = prop.getProperty("bankingUserName");
+		return Bankusername;
 	}
 	
 	public String getBanking_Password() {
-		String password = prop.getProperty("bankingPassword");
-		return password;
+		String Bankpassword = prop.getProperty("bankingPassword");
+		return Bankpassword;
 	}
 	
+	//Insurance Domain readconfig functions
+	
+	public String getInsuranceApplicationURL() {
+		String Insuranceurl = prop.getProperty("insuranceURL");
+		return Insuranceurl;
+	}
 	public String getInsurance_Username() {
-		String username = prop.getProperty("insurance_UserName");
-		return username;
+		String Insuranceusername = prop.getProperty("insurance_UserName");
+		return Insuranceusername;
 	}
 	
 	public String getInsurance_Password() {
-		String password = prop.getProperty("insurance_Password");
-		return password;
+		String Insurancepassword = prop.getProperty("insurance_Password");
+		return Insurancepassword;
 	}
 	
+	
+//All browser Driver readconfig functions
 	public String getFirefoxDriver() {
 		String fDriver = prop.getProperty("Firefox_driver");
 		return fDriver;
