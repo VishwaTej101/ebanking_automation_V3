@@ -21,19 +21,43 @@ public class ReadConfig {
 		}
 	}
 	
-	public String getApplicationURL() {
-		String url = prop.getProperty("baseURL");
+	public String getBankingApplicationURL() {
+		String url = prop.getProperty("bankingURL");
 		return url;
 	}
 	
-	public String getUsername() {
-		String username = prop.getProperty("username");
+	public String getInsuranceApplicationURL() {
+		String url = prop.getProperty("insuranceURL");
+		return url;
+	}
+	public String getBanking_Username() {
+		String username = prop.getProperty("bankingUserName");
 		return username;
 	}
 	
-	public String getPassword() {
-		String password = prop.getProperty("password");
+	public String getBanking_Password() {
+		String password = prop.getProperty("bankingPassword");
 		return password;
+	}
+	
+	public String getInsurance_Username() {
+		String username = prop.getProperty("insurance_UserName");
+		return username;
+	}
+	
+	public String getInsurance_Password() {
+		String password = prop.getProperty("insurance_Password");
+		return password;
+	}
+	
+	public String getFirefoxDriver() {
+		String fDriver = prop.getProperty("Firefox_driver");
+		return fDriver;
+	}
+	
+	public String getChromeDriver() {
+		String CDriver = prop.getProperty("Chrome_driver");
+		return CDriver;
 	}
 }
 	

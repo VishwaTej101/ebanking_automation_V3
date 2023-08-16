@@ -25,12 +25,12 @@ public class BaseClass {
 	public static WebDriver driver;
 
 	// banking domain creds
-	public String username = "mngr516186";// readconfig.getusername();
-	public String password = "requduh"; // readconfig.getpassword()
+	public String banking_username = readconfig.getBanking_Username();
+	public String banking_password = readconfig.getBanking_Password();
 
 	// insurance domain creds
-	public String Ins_username = "data@test.com";// readconfig.getusername();
-	public String Ins_password = "password"; // readconfig.getpassword()
+	public String Ins_username =  readconfig.getInsurance_Username();
+	public String Ins_password = readconfig.getInsurance_Password();
 
 	@Parameters({ "browser", "domain" })
 	@BeforeClass
@@ -46,19 +46,19 @@ public class BaseClass {
 
 		// Set base URL based on domain
 		if (domain.equalsIgnoreCase("banking")) {
-			baseURL = "https://demo.guru99.com/v3/index.php";
+			baseURL = readconfig.getBankingApplicationURL();
 		} else if (domain.equalsIgnoreCase("insurance")) {
-			baseURL = "https://demo.guru99.com/insurance/v1/index.php";
+			baseURL = readconfig.getInsuranceApplicationURL();
 		} else {
 			throw new IllegalArgumentException("Invalid environment provided");
 		}
 
 		// Initialize WebDriver based on browser parameter
 		if (br.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxDriver());
 			driver = new FirefoxDriver();
 		} else if (br.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "E:\\geckodriver-v0.33.0-win32\\geckodriver.exe");
+			System.setProperty("webdriver.chrome.driver", readconfig.getChromeDriver());
 			driver = new ChromeDriver();
 		}
 
