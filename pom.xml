@@ -1,11 +1,22 @@
+<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+=======
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+>>>>>>> new-feature
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>inetBanking_v1</groupId>
 	<artifactId>inetBanking_v1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
 		<!-- Selenium WebDriver -->
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+=======
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+>>>>>>> new-feature
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -16,14 +27,20 @@
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.2.2</version>
+<<<<<<< HEAD
 			<scope>test</scope>
+=======
+>>>>>>> new-feature
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.4.6</version>
+<<<<<<< HEAD
 			<scope>test</scope>
+=======
+>>>>>>> new-feature
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
@@ -37,16 +54,24 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>2.0.3</version>
 			<type>pom</type>
+<<<<<<< HEAD
 			<scope>test</scope>
+=======
+>>>>>>> new-feature
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.5.1</version>
+<<<<<<< HEAD
 			<scope>compile</scope>
 		</dependency>
 		
+=======
+		</dependency>
+
+>>>>>>> new-feature
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
@@ -59,7 +84,12 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.11.0</version>
 		</dependency>
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+=======
+		<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+>>>>>>> new-feature
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
@@ -75,7 +105,10 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.4.6</version>
+<<<<<<< HEAD
 			<scope>test</scope>
+=======
+>>>>>>> new-feature
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
@@ -89,14 +122,20 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>2.0.3</version>
 			<type>pom</type>
+<<<<<<< HEAD
 			<scope>test</scope>
+=======
+>>>>>>> new-feature
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.5.1</version>
+<<<<<<< HEAD
 			<scope>test</scope>
+=======
+>>>>>>> new-feature
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
@@ -128,7 +167,12 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.11.0</version>
 		</dependency>
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+=======
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+>>>>>>> new-feature
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
@@ -140,7 +184,12 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+=======
+		<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+>>>>>>> new-feature
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
@@ -152,4 +201,25 @@
 			<version>3.141.59</version>
 		</dependency>
 	</dependencies>
+<<<<<<< HEAD
+=======
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-archiver</artifactId>
+				<version>3.5.0</version> <!-- Update this version -->
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.1.2</version>
+				<configuration><suiteXmlFiles>
+					<suiteXmlFiles>testng.xml</suiteXmlFiles>
+				</suiteXmlFiles></configuration>
+			</plugin>
+		</plugins>
+		<!-- Other build configurations -->
+	</build>
+>>>>>>> new-feature
 </project>

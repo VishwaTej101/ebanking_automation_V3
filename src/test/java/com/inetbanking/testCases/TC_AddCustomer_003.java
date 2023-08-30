@@ -21,10 +21,17 @@ import com.inetbanking.pageObjects.AddCustomer_Page;
 import com.inetbanking.pageObjects.LoginPage;
 
 public class TC_AddCustomer_003 extends BaseClass {
+<<<<<<< HEAD
 	
 	ExtentReports extentReportsForThisTestCase;
 
     private ExtentTest test2= extentReports.createTest("Banking_Add_Customer_TC"); // Declare the extent test variable
+=======
+
+//	ExtentReports extentReportsForThisTestCase;
+
+//    private ExtentTest test2= extentReports.createTest("Banking_Add_Customer_TC"); // Declare the extent test variable
+>>>>>>> new-feature
 
 //    @BeforeMethod
 //    public void setupForThisTestCase() {
@@ -39,6 +46,7 @@ public class TC_AddCustomer_003 extends BaseClass {
 //        test2 = extentReportsForThisTestCase.createTest("Add Customer test - TC_AddCustomer");
 //    }
 
+<<<<<<< HEAD
     // Calling LogIn page object class first step
     @Test
     public void addNewCustomer() throws InterruptedException {
@@ -85,6 +93,54 @@ public class TC_AddCustomer_003 extends BaseClass {
             test2.log(Status.FAIL, "Customer is not added");
         }
     }
+=======
+	// Calling LogIn page object class first step
+	@Test
+	public void addNewCustomer() throws InterruptedException {
+		driver.manage().window().maximize();
+		LoginPage lp = new LoginPage(driver);
+		lp.setUserName(banking_username);
+		lp.setPassword(banking_password);
+		lp.clickSubmit();
+
+		// Calling and linking the Driver with AddCustomer_page object class so that we
+		// can use all the webelements
+		// from that class
+		AddCustomer_Page addcust = new AddCustomer_Page(driver);
+
+		addcust.clickAddNewCustomer();
+
+		addcust.custName("Vishwa");
+		addcust.custgender("male");
+
+		// Calendar
+		addcust.custdob("10", "15", "1985");
+
+		// gave it sleep for 6 seconds total
+		addcust.custaddress("INDIA");
+		addcust.custcity("HYD");
+		addcust.custstate("AP");
+		addcust.custpinno("5000074");
+		addcust.cutteephoneno("9999999999");
+
+		// Here random email is generated with @test appending it
+		String email = randomeString() + "@test.com";
+		addcust.custemailid(email);
+		addcust.custpassword("Zxcvbnm@123");
+		addcust.custsubmit();
+
+		// Assertion/validation once the customer has been registered properly
+		boolean res = driver.getPageSource().contains("Customer Registered Successsfully!!!");
+
+		if (res == true) {
+			Assert.assertTrue(true);
+//            test2.log(Status.PASS, "Customer added successfully");
+		} else {
+			Assert.assertTrue(false);
+//            test2.log(Status.FAIL, "Customer is not added");
+		}
+	}
+>>>>>>> new-feature
 
 //    @AfterMethod
 //    public void Screenshot(ITestResult result) throws IOException {
@@ -97,6 +153,7 @@ public class TC_AddCustomer_003 extends BaseClass {
 //        }
 //    }
 
+<<<<<<< HEAD
     // The email section cannot take the same email twice, so I have called a predefined section where the random alphabetic value
     // is called whenever the function is called
     public String randomeString() {
@@ -108,4 +165,18 @@ public class TC_AddCustomer_003 extends BaseClass {
         String generatedstring2 = RandomStringUtils.randomNumeric(4);
         return generatedstring2;
     }
+=======
+	// The email section cannot take the same email twice, so I have called a
+	// predefined section where the random alphabetic value
+	// is called whenever the function is called
+	public String randomeString() {
+		String generatedstring = RandomStringUtils.randomAlphabetic(8);
+		return generatedstring;
+	}
+
+	public String randomeNum() {
+		String generatedstring2 = RandomStringUtils.randomNumeric(4);
+		return generatedstring2;
+	}
+>>>>>>> new-feature
 }

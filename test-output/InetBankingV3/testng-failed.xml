@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<<<<<<< HEAD
-<suite name="Failed suite [InetBankingV1]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="BankingApp Test(failed)">
-    <parameter name="browser" value="firefox"/>
-    <classes>
-=======
 <suite name="Failed suite [InetBankingV3]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="BankingApp Test(failed)">
     <classes>
@@ -17,23 +11,13 @@
           <include name="tearDownForThisTestCase"/>
         </methods>
       </class> <!-- com.inetbanking.testCases.TC_LoginTest_001 -->
->>>>>>> new-feature
       <class name="com.inetbanking.testCases.TC_AddCustomer_003">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
           <include name="addNewCustomer"/>
-<<<<<<< HEAD
-          <include name="setupForThisTestCase"/>
-          <include name="Screenshot"/>
-=======
->>>>>>> new-feature
         </methods>
       </class> <!-- com.inetbanking.testCases.TC_AddCustomer_003 -->
     </classes>
   </test> <!-- BankingApp Test(failed) -->
-<<<<<<< HEAD
-</suite> <!-- Failed suite [InetBankingV1] -->
-=======
 </suite> <!-- Failed suite [InetBankingV3] -->
->>>>>>> new-feature

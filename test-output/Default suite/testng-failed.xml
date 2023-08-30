@@ -8,6 +8,11 @@
           <include name="loginTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
+<<<<<<< HEAD
+=======
+          <include name="tearDownForThisTestCase"/>
+          <include name="setupForThisTestCase"/>
+>>>>>>> new-feature
         </methods>
       </class> <!-- com.inetbanking.testCases.TC_LoginTest_001 -->
     </classes>
