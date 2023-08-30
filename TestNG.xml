@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="InetBankingV3">
+	<test name="BankingApp Test">
+		<!--<parameter name="browser" value="firefox" />
+		<parameter name="domain" value="banking" />  -->
+		<classes>
+			<!--<class name="com.inetbanking.testCases.TC_LoginDDT_002" />-->
+			<class name="com.inetbanking.testCases.TC_AddCustomer_003"/>
+			<class name="com.inetbanking.testCases.TC_LoginTest_001"></class>
+		</classes>
+	</test>
+	<!--<test name="InsuranceApp Test">
+		<parameter name="browser" value="firefox" />
+		<parameter name="domain" value="insurance" /> 
+		<classes>
+			<class name="com.InsuranceCompany.testCases.TC_Insurance_Login_Page_001"/>
+			<class name="com.InsuranceCompany.testCases.TC_Insurance_Registration_page_001"></class>
+		</classes>
+	</test> -->
+</suite>
